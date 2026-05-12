@@ -13,8 +13,16 @@
      <p>age:{{age}}</p>
      <p>firstSkill: {{skill.0}}</p>
      <p>skill : {{skill}}</p>
-     <p>user: {{user}}</p>
+     <p>user: {{user.name}}</p>
+     <h3>Blog info</h3>
+     <p>title: {{blog.title}}</p>
+     <p>content: {{blog.content}}</p>
+     <p>created_at: {{blog.created_at}}</p>
+     <p>author: {{blog.author}}</p>
+     <p>content: {{blog.content|safe}}</p>
 
-
+     <h4>defaultval</h4>
+     <p>defalt value : {{empty_value | default:"lack of info"}}</p>
+     <p>defalt value : {{empty_value | default_if_none:"No Data"}}</p>
   </body>
 </html>
