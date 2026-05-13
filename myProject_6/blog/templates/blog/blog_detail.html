@@ -6,7 +6,10 @@
     <title>practicing blog life</title>
   </head>
   <body>
-    <h1>life blog </h1>
+    <h1>life story</h1>
+    <p>author : {{ post.author | yesno:"yes,no,MayBe"}}</p>
+
+    <hr>
     <p>time : {{ current_time }} </p>
     <p><b>title(Normal) : </b> {{post.title}}</p>
     <p>uppercase : {{post.title|upper}} </p>
