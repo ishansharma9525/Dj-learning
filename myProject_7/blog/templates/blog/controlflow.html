@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Control Flow</title>
+  </head>
+  <body>
+    <h1>Learning control flow</h1>
+    <p>{{ Poted_time }}</p>
+    {% if Dolo.1.is_featured%}
+    <h3>Feature blog: {{ Dolo.1.Title }}</h3>
+    {% else %}
+    <h3>NO featured blog: {{ Dolo.1.Title }}</h3>
+    {% endif %} 
+    {% comment "" %} For Loop {% endcomment %}
+    <ul>
+      {% for blog in Dolo %}
+      <li>{{ forloop.counter }}. {{ blog.Title }} :- {{ blog.Auther }}</li>
+      {% empty %}
+      <li>No blogs available.</li>
+      {% endfor %}
+    </ul>
+
+    {% comment "" %} with use {% endcomment %} 
+    {% with total_blogs=Dolo|length %}
+    <p>Total number of blogs: {{ total_blogs }}</p>
+    {% endwith %} 
+    {% comment %} cycle {% endcomment %}
+    <hr />
+    <h3>blog table</h3>
+    <table border="2" cellpadding="4" cellspacing="6">
+      {% comment %} {% for blog in Dolo %} {% endcomment %}
+      <thead>
+        <tr style="background-color: HoneyDew">
+          <th>Title</th>
+          <th>Author</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for blog in Dolo %}
+        <tr style="background-color: {% cycle 'lightgray' 'lightblue' %}">
+          <td>{{ blog.Title }}</td>
+          <td>{{ blog.Auther }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <hr>
+    {% comment %} First of {% endcomment %}
+    <p>Author: {% firstof blog.1.author "Unknown" %}</p>
+    {% comment %} verbatim {% endcomment %}
+
+    {% verbatim %}
+    <p>This is a verbatim block. {{ This will not be processed by Django }}</p>
+    {% endverbatim %}
+    {% comment %} {% autoescape off %}{% endautoescape %} {% endcomment %}
+     
+  </body>
+</html>
