@@ -1,0 +1,23 @@
+body{
+    font-family: 'Courier New', Courier, monospace;
+    background : rgb(205, 176, 101);
+    text-align: center;
+    padding: 15px;
+}
+nav ul{
+    list-style-type: none;
+    margin: 2px;
+    padding: 9px;
+    overflow: hidden;
+    background-color: #716d6d;
+}
+
+nav ul li a{
+    color: white;
+    text-decoration: none;
+
+}
+
+h1{
+    color: #bde1cb;
+}
